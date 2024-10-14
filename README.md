@@ -11,3 +11,12 @@ The website is hosted on **EC2** and allows users to select an image. Upon uploa
 
 ### Result from Rekognition
 ![Result from Rekognition](https://github.com/user-attachments/assets/1aa29d2c-ce68-4da3-bcf7-1bce6be0001c)
+
+## Process Overview
+
+Here’s a short clip demonstrating the entire process:
+
+[Watch the Process]
+
+https://github.com/user-attachments/assets/562dafc6-b868-4104-a89a-907928ee3133
+
