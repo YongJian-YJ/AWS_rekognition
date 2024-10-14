@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #5A9;
+        }
+
+        form {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #5A9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4a8;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Upload an Image for Text Detection</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file-to-save" required>
+        <button type="submit">Upload and Detect</button>
+    </form>
+
+    <h2>Detected Texts:</h2>
+    <ul>
+        {% if detected_texts %}
+        {% for item in detected_texts %}
+        <li>
+            Detected Text: {{ item.text }}<br>
+            - Confidence: {{ item.confidence }}
+        </li>
+        {% endfor %}
+        {% else %}
+        <li>No detected texts available.</li>
+        {% endif %}
+    </ul>
+</body>
+
+</html>
